@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trustoo.nl - Vind de beste dienstverleners in jouw regio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="https://static.trustoo.nl/trustoologo_white.svg" alt="Trustoo" class="logo">
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">Bedrijf aanmelden</a>
+                    <a href="#" class="nav-link login-btn">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="location-display">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="user-location">Je locatie wordt geladen...</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Vind de beste <span class="highlight">dienstverleners</span><br>
+                    bij jou in de buurt
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Meer dan 50.000 betrouwbare bedrijven, 2.9 miljoen reviews.<br>
+                    100% gratis vergelijken en tot 40% besparen.
+                </p>
+
+                <!-- Animated Character -->
+                <div class="character-container">
+                    <div class="character" id="animated-character">
+                        <div class="character-body">
+                            <div class="character-head"></div>
+                            <div class="character-torso"></div>
+                            <div class="character-arms">
+                                <div class="arm left-arm"></div>
+                                <div class="arm right-arm"></div>
+                            </div>
+                            <div class="character-legs">
+                                <div class="leg left-leg"></div>
+                                <div class="leg right-leg"></div>
+                            </div>
+                        </div>
+                        <div class="profession-tools" id="profession-tools">
+                            <!-- Tools will be dynamically added -->
+                        </div>
+                        <div class="profession-label" id="profession-label">Boekhouder</div>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="scrollToServices()">
+                        <i class="fas fa-search"></i>
+                        Zoek een dienstverlener
+                    </button>
+                    <button class="btn btn-secondary" onclick="showHowItWorks()">
+                        <i class="fas fa-play"></i>
+                        Hoe werkt het?
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Animation -->
+        <div class="hero-background">
+            <div class="floating-icons">
+                <i class="fas fa-hammer"></i>
+                <i class="fas fa-paint-brush"></i>
+                <i class="fas fa-wrench"></i>
+                <i class="fas fa-calculator"></i>
+                <i class="fas fa-home"></i>
+                <i class="fas fa-car"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-indicators">
+        <div class="container">
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>50.000+</h3>
+                        <p>Betrouwbare bedrijven</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>2.900.000+</h3>
+                        <p>Reviews van klanten</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>40%</h3>
+                        <p>Gemiddelde besparing</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>#1</h3>
+                        <p>Platform Nederland</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Populaire diensten in <span id="location-services">jouw regio</span></h2>
+            
+            <div class="services-grid">
+                <div class="service-card" data-service="boekhouder">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Boekhouders</h3>
+                    <p>Professionele boekhouding voor je bedrijf</p>
+                    <span class="service-count">2.400+ bedrijven</span>
+                </div>
+
+                <div class="service-card" data-service="schilder">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Schilders</h3>
+                    <p>Vakkundige schilders voor binnen en buiten</p>
+                    <span class="service-count">3.200+ bedrijven</span>
+                </div>
+
+                <div class="service-card" data-service="dakdekker">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Dakdekkers</h3>
+                    <p>Specialist in dakbedekking en reparaties</p>
+                    <span class="service-count">1.800+ bedrijven</span>
+                </div>
+
+                <div class="service-card" data-service="loodgieter">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Loodgieters</h3>
+                    <p>24/7 loodgieter service bij jou in de buurt</p>
+                    <span class="service-count">2.100+ bedrijven</span>
+                </div>
+
+                <div class="service-card" data-service="makelaar">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Makelaars</h3>
+                    <p>Ervaren makelaars voor koop en verkoop</p>
+                    <span class="service-count">1.500+ bedrijven</span>
+                </div>
+
+                <div class="service-card" data-service="aannemer">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Aannemers</h3>
+                    <p>Professionele aannemers voor elke klus</p>
+                    <span class="service-count">2.800+ bedrijven</span>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <button class="btn btn-outline">
+                    Bekijk alle 87 diensten
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Zo werkt het</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Zoek een dienst</h3>
+                    <p>Kies uit 87 verschillende diensten en vind bedrijven bij jou in de buurt</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Ontvang offertes</h3>
+                    <p>Beschrijf je project en ontvang gratis offertes van maximaal 4 bedrijven</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Maak je keuze</h3>
+                    <p>Vergelijk bedrijven op basis van prijs, reviews en kies het beste bedrijf</p>
+                </div>
+            </div>
+
+            <div class="step-cta">
+                <button class="btn btn-primary">
+                    Start met vergelijken
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
