@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/trustoonl/static/css/main.70758af4.css",
+    "main.js": "/trustoonl/static/js/main.3333a012.js",
+    "index.html": "/trustoonl/index.html",
+    "main.70758af4.css.map": "/trustoonl/static/css/main.70758af4.css.map",
+    "main.3333a012.js.map": "/trustoonl/static/js/main.3333a012.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70758af4.css",
+    "static/js/main.3333a012.js"
+  ]
+}
