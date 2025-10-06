@@ -28,6 +28,12 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden pt-20 md:pt-16" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 30%, #e2e8f0 70%, #f8fafc 100%)' }}>
+      {/* Subtle Floating Particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 right-10 w-2 h-2 bg-blue-400 rounded-full opacity-30 animate-float"></div>
+        <div className="absolute bottom-32 left-20 w-1 h-1 bg-purple-400 rounded-full opacity-40 animate-bounce-slow"></div>
+        <div className="absolute top-40 left-10 w-1.5 h-1.5 bg-blue-500 rounded-full opacity-25 animate-particles"></div>
+      </div>
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transform-3d">
@@ -71,23 +77,24 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12 px-4">
             <button
               onClick={scrollToServices}
-              className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-medium text-sm md:text-base shadow-glass hover:shadow-float transform-gpu transition-all duration-300 hover:scale-105 hover-tilt flex items-center gap-3 overflow-hidden w-full sm:w-auto glass-card border border-white/20 animate-pulse-glow"
+              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-medium text-base shadow-2xl transform-gpu transition-all duration-300 hover:scale-105 hover:shadow-blue-500/25 hover:-translate-y-1 flex items-center gap-3 overflow-hidden perspective-1000"
+              style={{ boxShadow: '0 20px 40px rgba(59, 130, 246, 0.3)' }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-              <Search size={18} className="relative z-10 group-hover:rotate-12 transition-transform duration-300 md:w-5 md:h-5" />
+              <Search size={20} className="relative z-10 group-hover:rotate-12 transition-transform duration-300" />
               <span className="relative z-10">Zoek een dienstverlener</span>
               <div className="absolute inset-0 bg-white/20 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 skew-x-12"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <div className="absolute -inset-2 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl -z-10"></div>
             </button>
             
             <button
               onClick={showHowItWorks}
-              className="group relative px-6 md:px-8 py-3 md:py-4 text-blue-600 glass-strong rounded-2xl font-medium text-sm md:text-base shadow-glass hover:shadow-float transform-gpu transition-all duration-300 hover:scale-105 hover-tilt hover-glass flex items-center gap-3 overflow-hidden w-full sm:w-auto border border-blue-200/30"
+              className="group relative px-8 py-4 text-blue-600 border-2 border-blue-200 bg-white/70 backdrop-blur-sm rounded-2xl font-medium text-base shadow-xl transform-gpu transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:-translate-y-1 hover:border-blue-300 flex items-center gap-3 overflow-hidden perspective-1000"
             >
-              <Play size={18} className="group-hover:scale-110 transition-transform duration-300 md:w-5 md:h-5" />
+              <Play size={20} className="group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
               <span>Hoe werkt het?</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              <div className="absolute -inset-1 bg-blue-200/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl -z-10"></div>
             </button>
           </div>
 

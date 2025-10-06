@@ -25,11 +25,12 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 group">
             <img
               src="/api/placeholder/120/40"
               alt="Trustoo"
-              className="h-8 w-auto filter brightness-0 saturate-100"
+              className="h-8 w-auto filter brightness-0 saturate-100 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg"
+              style={{ filter: 'brightness(0) saturate(100%) drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3))' }}
             />
           </div>
 
@@ -49,7 +50,8 @@ const Header: React.FC = () => {
             </a>
             <a
               href="#"
-              className="group relative bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2.5 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium text-sm shadow-glass hover:shadow-float transform hover:scale-105 hover-tilt overflow-hidden glass-card border border-white/20"
+              className="group relative bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2.5 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium text-sm shadow-lg hover:shadow-xl transform hover:scale-105 overflow-hidden"
+              style={{ boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)' }}
             >
               <span className="relative z-10">Bedrijf aanmelden</span>
               <div className="absolute inset-0 bg-white/20 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 skew-x-12"></div>

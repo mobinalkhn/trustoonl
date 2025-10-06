@@ -36,22 +36,33 @@ const TrustIndicators: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group relative text-center p-6 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl transform-gpu transition-all duration-500 hover:scale-105 hover:-translate-y-2"
+              className="group relative text-center p-6 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl transform-gpu transition-all duration-500 hover:scale-105 hover:-translate-y-2 perspective-1000"
+              style={{ 
+                transformStyle: 'preserve-3d',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 8px 32px -8px rgba(59, 130, 246, 0.15)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'rotateX(5deg) rotateY(5deg) translateZ(20px) scale(1.02)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)';
+              }}
             >
               {/* 3D Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Icon */}
               <div className="relative mb-4">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-2xl transform-gpu transition-all duration-500 group-hover:rotateY-12 group-hover:scale-110 shadow-blue-500/25">
-                  {stat.icon}
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-2xl transform-gpu transition-all duration-500 group-hover:rotateY-12 group-hover:scale-110 shadow-blue-500/25 relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                  <div className="relative z-10">{stat.icon}</div>
                 </div>
                 {/* 3D Shadow */}
                 <div className="absolute inset-0 w-16 h-16 mx-auto bg-blue-500 rounded-2xl blur-xl opacity-20 transform translate-y-2 group-hover:translate-y-3 transition-all duration-500"></div>
               </div>
               
               <div className="relative z-10">
-                <div className="text-4xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                <div className="text-4xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-all duration-300 transform group-hover:scale-110" style={{ textShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
                   {stat.number}
                 </div>
                 <div className="text-sm text-gray-600 font-medium">
