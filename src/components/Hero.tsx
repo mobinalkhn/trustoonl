@@ -28,23 +28,17 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden pt-20 md:pt-16" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 30%, #e2e8f0 70%, #f8fafc 100%)' }}>
-      {/* Floating Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-tr from-purple-400/15 to-blue-600/15 rounded-full blur-3xl animate-bounce-slow"></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-transparent rounded-full blur-2xl animate-particles"></div>
-      </div>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transform-3d">
         <div className="text-center relative perspective-1000">
           {/* Location Display */}
           <LocationDetector onLocationUpdate={setUserLocation} />
           
-          <div className="inline-flex items-center gap-3 glass-strong shadow-glass px-4 md:px-6 py-2 md:py-3 rounded-full text-gray-700 text-xs md:text-sm font-medium mb-6 md:mb-8 transform-gpu hover:scale-105 hover:shadow-float hover-tilt transition-all duration-300 border border-white/30">
+          <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-white/20 shadow-2xl px-6 py-3 rounded-full text-gray-700 text-sm font-medium mb-8 transform-gpu hover:scale-105 hover:shadow-xl transition-all duration-300">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
-            <MapPin size={14} className="text-blue-600 md:w-4 md:h-4" />
+            <MapPin size={16} className="text-blue-600" />
             <span className="font-semibold">{userLocation}</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 rounded-full transition-opacity duration-500"></div>
           </div>
 
           {/* Main Heading */}
@@ -69,11 +63,8 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Animated Character */}
-          <div className="mb-8 md:mb-12 relative">
-            <div className="glass-card p-4 md:p-6 rounded-3xl shadow-glass hover:shadow-float transition-all duration-500 inline-block hover-tilt">
-              <AnimatedCharacter />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
+          <div className="mb-12">
+            <AnimatedCharacter />
           </div>
 
           {/* CTA Buttons */}
@@ -101,25 +92,10 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-gray-600 text-xs md:text-sm px-4">
-            <div className="glass-card px-3 md:px-4 py-2 rounded-full shadow-glass hover:shadow-float transition-all duration-300 hover:scale-105 border border-white/20">
-              <span className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                Altijd gratis
-              </span>
-            </div>
-            <div className="glass-card px-3 md:px-4 py-2 rounded-full shadow-glass hover:shadow-float transition-all duration-300 hover:scale-105 border border-white/20">
-              <span className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                Geen verplichtingen
-              </span>
-            </div>
-            <div className="glass-card px-3 md:px-4 py-2 rounded-full shadow-glass hover:shadow-float transition-all duration-300 hover:scale-105 border border-white/20">
-              <span className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                Binnen 2 minuten
-              </span>
-            </div>
+          <div className="flex flex-wrap justify-center items-center gap-6 text-gray-500 text-sm">
+            <span>✓ Altijd gratis</span>
+            <span>✓ Geen verplichtingen</span>
+            <span>✓ Binnen 2 minuten</span>
           </div>
         </div>
       </div>
