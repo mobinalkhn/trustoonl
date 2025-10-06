@@ -49,14 +49,15 @@ const Header: React.FC = () => {
             </a>
             <a
               href="#"
-              className="group relative bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2.5 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium text-sm shadow-lg hover:shadow-xl transform hover:scale-105 overflow-hidden"
+              className="group relative bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2.5 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium text-sm shadow-glass hover:shadow-float transform hover:scale-105 hover-tilt overflow-hidden glass-card border border-white/20"
             >
               <span className="relative z-10">Bedrijf aanmelden</span>
               <div className="absolute inset-0 bg-white/20 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 skew-x-12"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </a>
             <a
               href="#"
-              className="text-blue-600 border border-blue-200 bg-white/80 backdrop-blur-sm px-6 py-2.5 rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 font-medium text-sm shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="text-blue-600 glass-strong px-6 py-2.5 rounded-xl hover-glass transition-all duration-300 font-medium text-sm shadow-glass hover:shadow-float transform hover:scale-105 hover-tilt border border-blue-200/30"
             >
               Login
             </a>
@@ -66,17 +67,17 @@ const Header: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+              className="glass-card p-2 rounded-xl shadow-glass hover:shadow-float transform hover:scale-105 transition-all duration-300 text-gray-700 hover:text-blue-600"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg border-t">
-            <div className="px-4 py-2 space-y-2">
+          <div className="md:hidden absolute top-16 left-0 right-0 glass-strong shadow-glass border-t border-white/20 rounded-b-2xl overflow-hidden">
+            <div className="px-4 py-4 space-y-3">
               <a
                 href="#"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"

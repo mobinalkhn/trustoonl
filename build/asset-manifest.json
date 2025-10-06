@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.70758af4.css",
-    "main.js": "/static/js/main.3333a012.js",
-    "index.html": "/index.html",
-    "main.70758af4.css.map": "/static/css/main.70758af4.css.map",
-    "main.3333a012.js.map": "/static/js/main.3333a012.js.map"
+    "main.css": "/trustoonl/static/css/main.70758af4.css",
+    "main.js": "/trustoonl/static/js/main.3333a012.js",
+    "index.html": "/trustoonl/index.html",
+    "main.70758af4.css.map": "/trustoonl/static/css/main.70758af4.css.map",
+    "main.3333a012.js.map": "/trustoonl/static/js/main.3333a012.js.map"
   },
   "entrypoints": [
     "static/css/main.70758af4.css",

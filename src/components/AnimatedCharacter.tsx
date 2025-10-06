@@ -172,14 +172,14 @@ const AnimatedCharacter: React.FC = () => {
   const currentProfession = professions[currentProfessionIndex];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center px-4">
       {/* Professional Person */}
       <div className={`relative group transition-all duration-700 ${isAnimating ? 'scale-95 opacity-80' : 'scale-100 opacity-100'}`}>
         {/* 3D Card Container */}
         <div className="relative perspective-1000">
-          <div className="relative w-32 h-32 mx-auto transform-gpu transition-all duration-700 hover:rotateY-5 hover:rotateX-5 hover:scale-105 preserve-3d">
+          <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto transform-gpu transition-all duration-700 hover:rotateY-5 hover:rotateX-5 hover:scale-105 preserve-3d">
             {/* Main Photo */}
-            <div className="w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-2xl border border-white/20 backdrop-blur-sm">
+            <div className="w-full h-full rounded-xl md:rounded-2xl overflow-hidden glass-card shadow-glass">
               <img 
                 src={`https://images.unsplash.com/${currentProfession.image}?w=300&h=300&fit=crop&crop=face&auto=format&q=80`}
                 alt={currentProfession.name}
@@ -191,7 +191,7 @@ const AnimatedCharacter: React.FC = () => {
             </div>
             
             {/* 3D Tool Badge */}
-            <div className={`absolute -bottom-2 -right-2 w-12 h-12 rounded-xl shadow-2xl border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-700 transform-gpu ${
+            <div className={`absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl glass-strong shadow-glass border border-white/20 flex items-center justify-center transition-all duration-700 transform-gpu ${
               isAnimating ? 'opacity-0 scale-50 rotateY-180' : 'opacity-100 scale-100 rotateY-0'
             } hover:rotateY-12 hover:scale-110`}
               style={{ 
@@ -199,7 +199,7 @@ const AnimatedCharacter: React.FC = () => {
                 boxShadow: `0 10px 25px ${currentProfession.color}20`
               }}
             >
-              <div className="text-lg" style={{ color: currentProfession.color }}>
+              <div className="text-sm sm:text-base md:text-lg" style={{ color: currentProfession.color }}>
                 {currentProfession.icon}
               </div>
             </div>
@@ -223,22 +223,22 @@ const AnimatedCharacter: React.FC = () => {
           </div>
           
           {/* 3D Shadow */}
-          <div className="absolute inset-0 top-2 left-2 w-32 h-32 bg-black/5 rounded-2xl blur-xl transform-gpu transition-all duration-700 group-hover:blur-2xl group-hover:scale-110 -z-10"></div>
+          <div className="absolute inset-0 top-1 left-1 sm:top-2 sm:left-2 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-black/5 rounded-xl md:rounded-2xl blur-lg md:blur-xl transform-gpu transition-all duration-700 group-hover:blur-2xl group-hover:scale-110 -z-10"></div>
         </div>
       </div>
 
       {/* 3D Profession Label */}
-      <div className="mt-8 text-center">
+      <div className="mt-4 md:mt-8 text-center">
         <div className="relative inline-block perspective-1000">
           <div 
-            className="px-6 py-3 rounded-2xl backdrop-blur-md border border-white/20 shadow-2xl transform-gpu transition-all duration-700 hover:rotateX-5 hover:scale-105 preserve-3d"
+            className="px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl glass-strong shadow-glass border border-white/20 transform-gpu transition-all duration-700 hover:rotateX-5 hover:scale-105 preserve-3d hover-tilt"
             style={{ 
               background: `linear-gradient(135deg, ${currentProfession.color}10, ${currentProfession.color}05)`,
-              boxShadow: `0 20px 40px ${currentProfession.color}15, 0 0 0 1px ${currentProfession.color}10`
+              boxShadow: `0 10px 25px ${currentProfession.color}15, 0 0 0 1px ${currentProfession.color}10`
             }}
           >
             <span 
-              className="font-medium text-lg tracking-wide transition-all duration-500"
+              className="font-medium text-sm md:text-lg tracking-wide transition-all duration-500"
               style={{ color: currentProfession.color }}
             >
               {currentProfession.name}
@@ -257,30 +257,31 @@ const AnimatedCharacter: React.FC = () => {
       </div>
 
       {/* 3D Progress Indicator */}
-      <div className="flex gap-3 mt-6 justify-center">
+      <div className="flex gap-2 md:gap-3 mt-4 md:mt-6 justify-center px-4">
         {professions.map((_, index) => (
           <div
             key={index}
             className={`relative transition-all duration-700 cursor-pointer ${
               index === currentProfessionIndex 
-                ? 'w-8 h-2' 
-                : 'w-2 h-2'
+                ? 'w-6 h-1.5 md:w-8 md:h-2' 
+                : 'w-1.5 h-1.5 md:w-2 md:h-2'
             }`}
             onClick={() => setCurrentProfessionIndex(index)}
           >
             <div
-              className={`w-full h-full rounded-full transition-all duration-700 transform-gpu ${
+              className={`w-full h-full rounded-full transition-all duration-700 transform-gpu hover-tilt glass-card ${
                 index === currentProfessionIndex 
-                  ? 'scale-100 shadow-lg' 
+                  ? 'scale-100 shadow-glass' 
                   : 'scale-75 hover:scale-90'
               }`}
               style={{
                 background: index === currentProfessionIndex 
                   ? `linear-gradient(90deg, ${professions[index].color}, ${professions[index].color}80)`
-                  : '#e5e7eb',
+                  : 'rgba(229, 231, 235, 0.8)',
+                backdropFilter: 'blur(10px)',
                 boxShadow: index === currentProfessionIndex 
                   ? `0 4px 15px ${professions[index].color}40`
-                  : 'none'
+                  : '0 2px 8px rgba(0, 0, 0, 0.1)'
               }}
             ></div>
             
@@ -290,7 +291,7 @@ const AnimatedCharacter: React.FC = () => {
                 className="absolute inset-0 rounded-full blur-sm -z-10 transition-all duration-700"
                 style={{
                   background: professions[index].color,
-                  transform: 'translateY(2px) scale(1.2)',
+                  transform: 'translateY(1px) scale(1.2)',
                   opacity: 0.3
                 }}
               ></div>
