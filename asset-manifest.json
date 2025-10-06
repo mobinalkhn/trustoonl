@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/trustoonl/static/css/main.6ad630c0.css",
-    "main.js": "/trustoonl/static/js/main.746fcaed.js",
+    "main.css": "/trustoonl/static/css/main.eccd2ec0.css",
+    "main.js": "/trustoonl/static/js/main.6aae1396.js",
     "index.html": "/trustoonl/index.html",
-    "main.6ad630c0.css.map": "/trustoonl/static/css/main.6ad630c0.css.map",
-    "main.746fcaed.js.map": "/trustoonl/static/js/main.746fcaed.js.map"
+    "main.eccd2ec0.css.map": "/trustoonl/static/css/main.eccd2ec0.css.map",
+    "main.6aae1396.js.map": "/trustoonl/static/js/main.6aae1396.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ad630c0.css",
-    "static/js/main.746fcaed.js"
+    "static/css/main.eccd2ec0.css",
+    "static/js/main.6aae1396.js"
   ]
 }
